@@ -37,7 +37,7 @@ jobs:
 
       - name: Cloning the SGSI tool‌‌...
         run: |
-          git clone --recurse-submodules https://github.com/MrErenK/SGSI-Build-Tool.git -b main Tool-SGSI-build
+          git clone --recurse-submodules https://github.com/MrErenK/SGSI-Build-Tool.git -b android-12 Tool-SGSI-build
 
       - name: Setting up tool environment...
         run: |
