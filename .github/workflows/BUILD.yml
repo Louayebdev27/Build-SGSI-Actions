@@ -50,7 +50,7 @@ jobs:
           if [ "${{ github.event.inputs.OS_TYPE }}" == "Generic" ]; then
           sudo bash url2SGSI.sh "${{ github.event.inputs.ROM_URL }}" "Generic":"${{ github.event.inputs.ROM_NAME }}"
           elif [ "${{ github.event.inputs.OS_TYPE }}" == "generic" ]; then
-          sudo bash url2SGSI.sh "${{ github.event.inputs.ROM_URL }}" "Generic:${{ github.event.inputs.ROM_NAME }}
+          sudo bash url2SGSI.sh "${{ github.event.inputs.ROM_URL }}" "Generic":"${{ github.event.inputs.ROM_NAME }}"
           else
           sudo bash url2SGSI.sh "${{ github.event.inputs.ROM_URL }}" "${{ github.event.inputs.OS_TYPE }}":"${{ github.event.inputs.REPACK_NAME }}"
           fi
