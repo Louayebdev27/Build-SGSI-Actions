@@ -65,5 +65,5 @@ jobs:
       - name: Uploading SGSI to PixelDrain...
         run: |
           cd Tool-SGSI-build/output
-          wget https://raw.githubusercontent.com/Fornax96/pdup/master/pdup && sudo chmod +x pdup
+          wget https://raw.githubusercontent.com/MrErenK/pdup/master/pdup && sudo chmod +x pdup
           ./pdup *.img.gz
