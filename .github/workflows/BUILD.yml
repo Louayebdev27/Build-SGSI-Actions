@@ -20,7 +20,7 @@ on:
         required: false
         default: ''
       REPACK_NAME:
-        description: 'Repack name (OutPut file name. Not needed to build generic sgsi.)'
+        description: 'Repack name (OutPut file name.)'
         required: false
         default: 'SGSI'
 
