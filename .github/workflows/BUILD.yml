@@ -20,7 +20,7 @@ on:
         required: false
         default: ''
       REPACK_NAME:
-        description: 'Repack name (OutPut file name. Not required to build generic sgsis.)'
+        description: 'Repack name (OutPut file name. Not needed to build generic sgsi.)'
         required: false
         default: 'SGSI'
 
@@ -37,7 +37,7 @@ jobs:
 
       - name: Cloning the SGSI tool‌‌...
         run: |
-          git clone --recurse-submodules https://github.com/As9124k82134/SGSI-Build-Tool.git -b main Tool-SGSI-build
+          git clone --recurse-submodules https://github.com/MrErenK/SGSI-Build-Tool.git -b main Tool-SGSI-build
 
       - name: Setting up tool environment...
         run: |
