@@ -59,11 +59,11 @@ jobs:
         run: |            
           cd Tool-SGSI-build
           sudo chmod -R 777 output ; cd output
-          xz -zq0 *.img
+          gzip -qf5 *img
           sudo rm -rf *.img          
           
       - name: Uploading SGSI to PixelDrain...
         run: |
           cd Tool-SGSI-build/output
           wget -q https://raw.githubusercontent.com/MrErenK/pdup/master/pdup && sudo chmod +x pdup
-          ./pdup *.img.xz
+          ./pdup *.img.gz
