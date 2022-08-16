@@ -1,6 +1,7 @@
 # Build-SGSI-Actions
 Build SGSIs (Only AB) using github actions with [rahulkhatri137's sgsi tool](https://github.com/rahulkhatri137/SGSIs).
 
+** Do not directly run actions using this repository. Fork it then do what you want. **
 
 Guide:
 - Fork this repository.
