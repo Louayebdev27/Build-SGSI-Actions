@@ -59,7 +59,7 @@ jobs:
         run: |            
           cd Tool-SGSI-build
           sudo chmod -R 777 output ; cd output
-          xz -zqk0 *.img
+          xz -zq0 *.img
           sudo rm -rf *.img          
           
       - name: Uploading SGSI to PixelDrain...
