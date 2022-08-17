@@ -37,16 +37,17 @@ jobs:
 
       - name: Cloning the SGSI tool‌‌...
         run: |
-          git clone --recurse-submodules https://github.com/MrErenK/SGSI-Build-Tool.git -b android-12 Tool-SGSI-build
+          git clone --recurse-submodules https://github.com/MrErenK/SGSI-Build-Tool.git -b android-12 SGSI-Build-Tool-12
 
       - name: Setting up tool environment...
+        working-directory: SGSI-Build-Tool-12
         run: |
-          sudo bash Tool-SGSI-build/setup.sh
+          sudo bash setup.sh
           sudo apt-get -y --purge remove "adoptopenjdk-11-hotspot"
 
       - name: Building SGSI...
+        working-directory: SGSI-Build-Tool-12
         run: |
-          cd Tool-SGSI-build
           if [ "${{ github.event.inputs.OS_TYPE }}" == "Generic" ]; then
           sudo bash url2SGSI.sh "${{ github.event.inputs.ROM_URL }}" "Generic":"${{ github.event.inputs.ROM_NAME }}"
           elif [ "${{ github.event.inputs.OS_TYPE }}" == "generic" ]; then
@@ -56,14 +57,14 @@ jobs:
           fi
           
       - name: Repack output file...
+        working-directory: SGSI-Build-Tool-12
         run: |            
-          cd Tool-SGSI-build
           sudo chmod -R 777 output ; cd output
           gzip -qf5 *img
           sudo rm -rf *.img          
           
       - name: Uploading SGSI to PixelDrain...
+        working-directory: SGSI-Build-Tool-12/output
         run: |
-          cd Tool-SGSI-build/output
           wget -q https://raw.githubusercontent.com/MrErenK/pdup/master/pdup && sudo chmod +x pdup
           ./pdup *.img.gz
